@@ -3,6 +3,10 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+// 引入自己封装的组件
+import Components from '@/components/index.js'
+Vue.use(Components)
+
 Vue.config.productionTip = false
 
 new Vue({

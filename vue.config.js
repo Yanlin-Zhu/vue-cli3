@@ -1,11 +1,25 @@
+'use strict'
+const path = require('path')
+
 module.exports = {
+  baseUrl: './',
+  outputDir: 'dist',
+  // configureWebpack: {
+  //   resolve: {
+  //     alias: {
+  //       '$style': path.join(__dirname, 'src/style')
+  //     }
+  //   }
+  // }
+  chainWebpack: (config) => {
+    config.resolve.alias
+      .set('@style', path.join(__dirname, 'src/style'))
+  }
   // baseUrl: process.env.NODE_ENV === 'production'
   //   ? '/production-sub-path/'
   //   : '/'
   // 基本路径
-  baseUrl: './',
   // 输出文件目录
-  outputDir: 'dist'
   // webpack-dev-server 相关配置
   // devServer: {
   //   port: 8888

@@ -1,16 +1,16 @@
 <template>
-  <div class="header">
+  <div class="zz-footer">
     {{msg}}
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'ZzFooter',
   props: {
     msg: {
       type: String,
-      default: 'aaa'
+      default: 'bbb'
     }
   }
 }
@@ -18,18 +18,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  @import "~@/style/base";
+
+  @include b(footer){
+    height: 50px;
+    background-color: rgb(132, 216, 146);
+  }
 </style>
