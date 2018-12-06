@@ -1,4 +1,5 @@
 'use strict'
+// import px2rem from 'postcss-plugin-px2rem'
 const path = require('path')
 
 module.exports = {
@@ -14,6 +15,22 @@ module.exports = {
   chainWebpack: (config) => {
     config.resolve.alias
       .set('@style', path.join(__dirname, 'src/style'))
+    // config.postcss.push(px2rem({
+    //   // The root element font size. Default is 100.
+    //   rootValue: 75
+    // }))
+  },
+  css: {
+    loaderOptions: {
+      css: {},
+      postcss: {
+        plugins: [
+          require('postcss-px2rem')({
+            remUnit: 37.5
+          })
+        ]
+      }
+    }
   }
   // baseUrl: process.env.NODE_ENV === 'production'
   //   ? '/production-sub-path/'

@@ -24,7 +24,8 @@ export default {
   @import "~@/style/base";
 
   @include b(header){
-    height: 50px;
     background-color: rgb(204, 201, 201);
+    flex: 0 0 50px;
+    overflow: hidden;
   }
 </style>

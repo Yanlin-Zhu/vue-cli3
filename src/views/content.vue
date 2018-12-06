@@ -1,5 +1,5 @@
 <template>
-  <div class="zz-content-body">
+  <div class="zz-content">
     <img alt="Vue logo" src="../assets/logo.png">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
@@ -17,7 +17,7 @@ export default {
 <style scoped lang="scss">
   @import "~@/style/base";
 
-  @include b(content-body){
-    flex: 1;
+  @include b(content){
+    flex: auto;
   }
 </style>

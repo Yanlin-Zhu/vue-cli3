@@ -21,7 +21,8 @@ export default {
   @import "~@/style/base";
 
   @include b(footer){
-    height: 50px;
     background-color: rgb(132, 216, 146);
+    flex: 0 0 50px;/*no*/
+    overflow: hidden;
   }
 </style>
