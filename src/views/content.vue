@@ -1,10 +1,9 @@
 <template>
   <div class="zz-content">
-    <img alt="Vue logo" src="../assets/img/bankcard/logo.png">
-    <img alt="Vue logo" src="../assets/img/bankcard/CEB@2X.png">
-    <img alt="Vue logo" src="../assets/img/bankcard/u=371772476,1548437417&fm=27&gp=0.jpg">
-    <img alt="Vue logo" src="../assets/img/bankcard/EeKlWfphHW.png">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <div class="a">qq</div>
+    <div class="b">ww</div>
+    <div class="c">ee</div>
+    <div class="d">rr</div>
   </div>
 </template>
 
@@ -22,5 +21,21 @@ export default {
 
   @include b(content){
     flex: auto;
+    div{
+      height: 100px;
+      margin: 20px 0;
+    }
+  }
+  .a{
+    background: url('../assets/img/img@2X/BOS@2X.png') no-repeat;
+  }
+  .b{
+    background: url('../assets/img/img@2X/BOC@2X.png') no-repeat;
+  }
+  .c{
+    background: url('../assets/img/img@2X/ABC@2X.png') no-repeat;
+  }
+  .d{
+    background: url('../assets/img/img@2X/CEB@2X.png') no-repeat;
   }
 </style>

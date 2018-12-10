@@ -1,21 +1,27 @@
 'use strict'
 // import px2rem from 'postcss-plugin-px2rem'
-const path = require('path')
+// const path = require('path')
+// const postcss = require('postcss')
 
 module.exports = {
   baseUrl: './',
   outputDir: 'dist',
-  // configureWebpack: {
-  //   resolve: {
-  //     alias: {
-  //       '$style': path.join(__dirname, 'src/style')
-  //     }
-  //   }
-  // }
-  chainWebpack: (config) => {
-    config.resolve.alias
-      .set('@style', path.join(__dirname, 'src/style'))
+  configureWebpack: {
+    // resolve: {
+    //   alias: {
+    //     '$style': path.join(__dirname, 'src/style')
+    //   }
+    // }
+    // plugins: [
+    //   postcssSprites({
+    //     spritePath: './src/assets/sprites/'
+    //   })
+    // ]
   }
+  // chainWebpack: (config) => {
+  //   config.resolve.alias
+  //     .set('@style', path.join(__dirname, 'src/style'))
+  // }
   // baseUrl: process.env.NODE_ENV === 'production'
   //   ? '/production-sub-path/'
   //   : '/'
