@@ -25,7 +25,7 @@ export default {
 
   @include b(header){
     background-color: rgb(204, 201, 201);
-    flex: 0 0 50px;
+    height: 50px;
     overflow: hidden;
   }
 </style>

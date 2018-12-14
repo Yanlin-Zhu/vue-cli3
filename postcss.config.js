@@ -14,12 +14,25 @@ module.exports = {
       verbose: true,
       // 非 img 子目录下面的 png 不合
       filterBy: function (image) {
-        // Allow only png files
-        if (!/\.png$/.test(image.url)) {
-          return Promise.reject()
-        }
-
-        return Promise.resolve()
+        return new Promise((resolve, reject) => {
+          if (!/img\/(\S+)\/\S+\.png$/.test(image.url)) {
+            return reject(`The image ${image.url} is incorrect.`)
+          }
+          return resolve(true)
+        })
+      },
+      groupBy: function (image) {
+        return new Promise((resolve, reject) => {
+          let reg = ['christmas']
+          let groupName = ''
+          reg.forEach(item => {
+            groupName = item
+            if (groupName) {
+              return resolve(groupName)
+            }
+          })
+          return reject(`The image ${image.url} is incorrect.`)
+        })
       }
     },
     'postcss-px2rem': {

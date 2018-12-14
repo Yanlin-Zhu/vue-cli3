@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <zz-header/>
-    <router-view/>
+    <section class="main">
+      <router-view/>
+    </section>
     <zz-footer/>
   </div>
 </template>
@@ -21,5 +23,10 @@ html, body{
   text-align: center;
   display: flex;
   flex-direction: column;
+  .main{
+    flex: 1;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 </style>

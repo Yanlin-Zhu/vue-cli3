@@ -22,7 +22,7 @@ export default {
 
   @include b(footer){
     background-color: rgb(132, 216, 146);
-    flex: 0 0 50px;/*no*/
+    height: 50px;/*no*/
     overflow: hidden;
   }
 </style>
