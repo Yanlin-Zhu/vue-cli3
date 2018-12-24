@@ -1,6 +1,7 @@
 # vue-3
 
 ## Project setup
+
 ```
 npm install
 ```
