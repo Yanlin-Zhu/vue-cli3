@@ -6,6 +6,8 @@ import 'amfe-flexible'
 
 // 引入自己封装的组件
 import Components from '@/components/index.js'
+import zz from 'zznpm'
+zz.sayHello()
 Vue.use(Components)
 
 Vue.config.productionTip = false
