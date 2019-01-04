@@ -37,7 +37,9 @@ sass bem 命名
 amfe-flexible
 postcss-plugin-px2rem
 postcss-px2rem
-数据精度
+数据精度 math.js
+多种布局
+websorket
 地图
 1px的边框在转化为rem时，在andriod webview以及部分低版本ios webview 会看不到。处理方法——让1px在编译后，依然是1px
 
