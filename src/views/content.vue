@@ -19,7 +19,7 @@
         <div class="ct1"></div>
         <div class="ct2"></div>
       </div>
-      <p>三倍图</p>
+      <p @click="init()">三倍图</p>
       <div class="zz-content__img--treble">
         <div class="a"></div>
         <div class="b"></div>
@@ -33,11 +33,19 @@
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
+import { getRequest } from '@/request/test.js'
 
 export default {
-  name: 'home'
+  name: 'home',
+  created () {
+    this.init()
+  },
+  methods: {
+    async init () {
+      const data = await getRequest()
+      console.log(data)
+    }
+  }
 }
 </script>
 

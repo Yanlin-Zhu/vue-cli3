@@ -1,4 +1,4 @@
-import fetch from '@/config/axios.config'
+import fetch from './axios.config'
 
 const DEFAULT_CONFIG = {
   isAutoMsg: true,
@@ -32,6 +32,7 @@ const POST_HEADER = {
 export function get (url, params = {}, config = {}) {
   let opts = { ...DEFAULT_CONFIG, ...config }
   opts.params = getParams(params, opts)
+  console.log(fetch.get(getUrl(url, opts.isApiHost), opts))
   return fetch.get(getUrl(url, opts.isApiHost), opts)
 }
 

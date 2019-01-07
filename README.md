@@ -42,6 +42,7 @@ postcss-px2rem
 websorket
 地图
 埋点统计
+上传七牛云/阿里云
 1px的边框在转化为rem时，在andriod webview以及部分低版本ios webview 会看不到。处理方法——让1px在编译后，依然是1px
 
 

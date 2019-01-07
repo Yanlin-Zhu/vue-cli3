@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import axios from 'axios'
-import casConfig from '@/config/cas.config.js'
+// import casConfig from '@/config/cas.config.js'
 
 /**
  * 请求配置
@@ -39,8 +39,9 @@ service.interceptors.request.use(
 
 service.interceptors.response.use(
   response => {
-    let { data: { status }, config } = response
-    const errorMsg = response.data.errMsg || response.data.err_msg
+    console.log(response)
+    let { data, config } = response
+    // const errorMsg = response.data.errMsg || response.data.err_msg
     if (config.isLoading) {
       let index = ARR_LOADING.indexOf(config.url)
       ARR_LOADING.splice(index, 1)
@@ -51,22 +52,22 @@ service.interceptors.response.use(
       }
     }
     // 如果不是status 返回值
-    if (Vue.Utils.isUndefined(status)) {
-      return response.data
-    }
+    // if (Vue.Utils.isUndefined(status)) {
+    return data
+    // }
 
-    if (Number(status) !== 0) {
-      if (config.isAutoMsg) {
-        Vue.$notify.error({
-          title: '提示',
-          message: errorMsg,
-          duration: 5000
-        })
-      }
-      return Promise.reject(response.data)
-    } else {
-      return response.data
-    }
+    // if (Number(status) !== 0) {
+    //   if (config.isAutoMsg) {
+    // Vue.$notify.error({
+    //   title: '提示',
+    //   message: errorMsg,
+    //   duration: 5000
+    // })
+    //   }
+    //   return Promise.reject(response.data)
+    // } else {
+    //   return response.data
+    // }
   },
   error => {
     ARR_LOADING = []
@@ -77,11 +78,11 @@ service.interceptors.response.use(
     IS_LOADING = false
     let response = error.response
     if (response === undefined) {
-      Vue.$notify({
-        title: '提示',
-        message: '网络异常, 请稍后重试',
-        duration: 5000
-      })
+      // Vue.$notify({
+      //   title: '提示',
+      //   message: '网络异常, 请稍后重试',
+      //   duration: 5000
+      // })
       return
     }
 
@@ -89,21 +90,21 @@ service.interceptors.response.use(
     const errMsg = data.err_msg || data.errMsg || data.error_msg
 
     if (status === 401) {
-      const urlPrefix = `${casConfig[process.env.TYPE].login}?authn_method=captcha&service=`
-      let current = `${window.location.protocol}//${window.location.hostname}`
-      if (process.env.NODE_TYPE !== 'production' && window.location.port !== '') {
-        current = `${current}:${window.location.port}`
-      }
+      // const urlPrefix = `${casConfig[process.env.TYPE].login}?authn_method=captcha&service=`
+      // let current = `${window.location.protocol}//${window.location.hostname}`
+      // if (process.env.NODE_TYPE !== 'production' && window.location.port !== '') {
+      //   current = `${current}:${window.location.port}`
+      // }
 
-      current += '/'
-      window.location = urlPrefix + encodeURIComponent(current)
+      // current += '/'
+      // window.location = urlPrefix + encodeURIComponent(current)
     }
 
     if (errMsg !== undefined) {
-      Vue.$notify.error({
-        title: '操作结果',
-        message: errMsg
-      })
+      // Vue.$notify.error({
+      //   title: '操作结果',
+      //   message: errMsg
+      // })
     }
     return Promise.reject(error)
   }
